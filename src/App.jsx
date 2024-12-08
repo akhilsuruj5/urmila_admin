@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 import AdminLogin from "./pages/Login";
 import Dashboard from "./pages/Dashboard"; // Placeholder for admin dashboard
 import ProtectedRoute from "./components/ProtectedRoute"; // Protect admin routes
