@@ -24,7 +24,7 @@ const App = () => {
         <Route path="/login" element={<AdminLogin />} />
         <Route path="/signup" element={<Signup />} />
 
-        <Route path="/signup-verify" element={<ProtectedRoute><SignupSuccess /></ProtectedRoute>} />
+        <Route path="/signup-verify" element={<SignupSuccess />} />
         <Route path="/users" element={<ProtectedRoute><UserManagement /></ProtectedRoute>} />
         <Route path="/registrations" element={<ProtectedRoute><RegistrationsPage /></ProtectedRoute>} />
         <Route path="/offerings" element={<ProtectedRoute><OfferingsPage /></ProtectedRoute>} />
@@ -42,9 +42,9 @@ const App = () => {
         <Route
           path="/admin/verify-account/:token"
           element={
-            <ProtectedRoute>
+            
               <AdminVerifyEmail />
-            </ProtectedRoute>
+            
           }
           />
       </Routes>
