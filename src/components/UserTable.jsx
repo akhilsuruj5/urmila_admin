@@ -15,7 +15,7 @@ const UserTable = () => {
 
   const saveEdit = async () => {
     try {
-      await fetch(`http://localhost:5000/admin/users/${editingUser._id}`, {
+      await fetch(`https://urmila-backend.onrender.com/admin/users/${editingUser._id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(editingUser),
@@ -42,7 +42,7 @@ const UserTable = () => {
         query.append("isVerified", isVerified);
       }
       const response = await fetch(
-        `http://localhost:5000/admin/users?${query.toString()}`
+        `https://urmila-backend.onrender.com/admin/users?${query.toString()}`
       );
       const data = await response.json();
       setUsers(data.users);
@@ -66,7 +66,7 @@ const UserTable = () => {
     if (!confirmDelete) return;
 
     try {
-      await fetch(`http://localhost:5000/admin/users/${id}`, {
+      await fetch(`https://urmila-backend.onrender.com/admin/users/${id}`, {
         method: "DELETE",
       });
       fetchUsers(); // Refresh the user list

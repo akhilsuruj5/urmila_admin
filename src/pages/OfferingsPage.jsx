@@ -57,8 +57,8 @@ const OfferingsPage = () => {
     }
 
     const url = isEditing
-      ? `http://localhost:5000/admin/offerings/${editingId}`
-      : 'http://localhost:5000/admin/offerings';
+      ? `https://urmila-backend.onrender.com/admin/offerings/${editingId}`
+      : 'https://urmila-backend.onrender.com/admin/offerings';
     const method = isEditing ? 'PUT' : 'POST';
 
     try {
@@ -91,7 +91,7 @@ const OfferingsPage = () => {
     if (!confirmDelete) return;
 
     try {
-      await fetch(`http://localhost:5000/admin/offerings/${id}`, { method: 'DELETE' });
+      await fetch(`https://urmila-backend.onrender.com/admin/offerings/${id}`, { method: 'DELETE' });
       fetchOfferings();
     } catch (error) {
       console.error('Error deleting offering:', error);

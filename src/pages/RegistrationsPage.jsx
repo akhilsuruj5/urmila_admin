@@ -30,7 +30,7 @@ const fetchUserProfile = async (userId) => {
     setLoading(true);
     try {
       const response = await fetch(
-        `http://localhost:5000/admin/registrations?page=${page}&status=${status}&offeringType=${offeringType}&userOccupation=${userOccupation}`
+        `https://urmila-backend.onrender.com/admin/registrations?page=${page}&status=${status}&offeringType=${offeringType}&userOccupation=${userOccupation}`
       );
       const data = await response.json();
       setRegistrations(data.registrations);
@@ -49,7 +49,7 @@ const fetchUserProfile = async (userId) => {
 
   const handleStatusChange = async (id, newStatus) => {
     try {
-      await fetch(`http://localhost:5000/admin/registrations/${id}/status`, {
+      await fetch(`https://urmila-backend.onrender.com/admin/registrations/${id}/status`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: newStatus }),
