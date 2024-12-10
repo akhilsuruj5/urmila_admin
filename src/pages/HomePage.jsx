@@ -2,7 +2,7 @@
 import React from 'react';
 import { useAuth } from '../context/AuthContext';
 import Navbar from '../components/Navbar';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.jpeg'; // Assuming logo is stored in assets folder
 
 const HomePage = () => {
@@ -45,18 +45,18 @@ const HomePage = () => {
         <div className="flex space-x-4 justify-center">
           {!isAuthenticated ? (
             <>
-              <a
-                href="/login"
+              <Link
+                to="/login"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded shadow"
               >
                 Login
-              </a>
-              <a
-                href="/signup"
+              </Link>
+              <Link
+                to="/signup"
                 className="bg-gray-700 hover:bg-gray-800 text-white px-5 py-2.5 rounded shadow"
               >
                 Signup
-              </a>
+              </Link>
             </>
           ) : (
             <button
