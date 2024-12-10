@@ -78,7 +78,7 @@ const Signup = () => {
           {message && <p className="text-green-500 text-sm">{message}</p>}
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+            className="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600"
           >
             Sign Up
           </button>
