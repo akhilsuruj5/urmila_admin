@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 
 const AuthContext = createContext();
 
-
 export const useAuth = () => {
   return useContext(AuthContext);
 };
@@ -15,7 +14,7 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const token = localStorage.getItem('adminToken');
-    setIsAuthenticated(!!token); // Set true if token exists, false otherwise
+    setIsAuthenticated(!!token); 
   }, []);
 
   const login = (token) => {

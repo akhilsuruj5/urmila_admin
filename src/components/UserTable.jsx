@@ -156,29 +156,46 @@ const UserTable = () => {
         </table>
       )}
 
-      {editingUser && (
-        <div className="modal">
-          <div className="modal-content">
-            <h2>Edit User</h2>
-            <input
-              type="text"
-              value={editingUser.name}
-              onChange={(e) =>
-                setEditingUser({ ...editingUser, name: e.target.value })
-              }
-            />
-            <input
-              type="email"
-              value={editingUser.email}
-              onChange={(e) =>
-                setEditingUser({ ...editingUser, email: e.target.value })
-              }
-            />
-            <button onClick={saveEdit}>Save</button>
-            <button onClick={() => setEditingUser(null)}>Cancel</button>
-          </div>
-        </div>
-      )}
+{editingUser && (
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+    <div className="bg-white p-6 rounded-lg w-full max-w-sm shadow-lg">
+      <h2 className="text-xl font-semibold text-center mb-4">Edit User</h2>
+      <input
+        type="text"
+        value={editingUser.name}
+        onChange={(e) =>
+          setEditingUser({ ...editingUser, name: e.target.value })
+        }
+        placeholder="Name"
+        className="w-full p-3 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <input
+        type="email"
+        value={editingUser.email}
+        onChange={(e) =>
+          setEditingUser({ ...editingUser, email: e.target.value })
+        }
+        placeholder="Email"
+        className="w-full p-3 mb-6 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <div className="flex justify-between">
+        <button
+          onClick={saveEdit}
+          className="px-6 py-2 bg-green-500 text-white rounded-md hover:bg-green-600"
+        >
+          Save
+        </button>
+        <button
+          onClick={() => setEditingUser(null)}
+          className="px-6 py-2 bg-red-500 text-white rounded-md hover:bg-red-600"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
 
       <div className="mt-4">
         <button
