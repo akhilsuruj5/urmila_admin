@@ -17,7 +17,7 @@ const TeamPage = () => {
   // Fetching team data from API
   const fetchTeamData = async () => {
     try {
-      const response = await fetch('http://localhost:5000/team');
+      const response = await fetch('https://urmila-backend.onrender.com/team');
       if (!response.ok) {
         throw new Error('Failed to fetch team data');
       }

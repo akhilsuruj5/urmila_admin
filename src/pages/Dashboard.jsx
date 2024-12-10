@@ -7,7 +7,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchOverviewData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/admin/overview');
+        const response = await fetch('https://urmila-backend.onrender.com/admin/overview');
         const data = await response.json();
         setOverviewData(data);
       } catch (error) {

@@ -19,7 +19,7 @@ const TestimonialsPage = () => {
     setLoading(true);
     try {
       const response = await fetch(
-        `http://localhost:5000/admin/testimonials?page=${page}&status=${statusFilter}`
+        `https://urmila-backend.onrender.com/admin/testimonials?page=${page}&status=${statusFilter}`
       );
 
       if (!response.ok) {
@@ -44,7 +44,7 @@ const TestimonialsPage = () => {
   const handleStatusChange = async (id, status) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/admin/testimonials/${id}`,
+        `https://urmila-backend.onrender.com/admin/testimonials/${id}`,
         {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
@@ -74,7 +74,7 @@ const TestimonialsPage = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/admin/testimonials/${id}`,
+        `https://urmila-backend.onrender.com/admin/testimonials/${id}`,
         { method: "DELETE" }
       );
 
@@ -104,7 +104,7 @@ const TestimonialsPage = () => {
   const submitEdit = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/admin/testimonials/${editTestimonial._id}`,
+        `https://urmila-backend.onrender.com/admin/testimonials/${editTestimonial._id}`,
         {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },

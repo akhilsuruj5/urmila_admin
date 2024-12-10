@@ -18,7 +18,7 @@ const AdminVerifyEmail = () => {
 
     const verifyEmail = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/admin/verify-account/${token}`);
+        const res = await axios.get(`https://urmila-backend.onrender.com/admin/verify-account/${token}`);
         setMessage(res.data.msg || "Account verified successfully.");
       } catch (err) {
         if (err.response && err.response.status === 400) {

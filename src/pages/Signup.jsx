@@ -23,7 +23,7 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:5000/admin/signup", {
+      const res = await axios.post("https://urmila-backend.onrender.com/admin/signup", {
         name,
         email,
         password,

@@ -16,7 +16,7 @@ const [isPopupOpen, setIsPopupOpen] = useState(false);
 
 const fetchUserProfile = async (userId) => {
   try {
-    const response = await fetch(`http://localhost:5000/admin/usersProfile/${userId}`);
+    const response = await fetch(`https://urmila-backend.onrender.com/admin/usersProfile/${userId}`);
     const data = await response.json();
     setSelectedUser(data);
     setIsPopupOpen(true);

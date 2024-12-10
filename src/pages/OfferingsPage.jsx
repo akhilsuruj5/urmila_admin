@@ -24,7 +24,7 @@ const OfferingsPage = () => {
   const fetchOfferings = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`http://localhost:5000/admin/offerings?page=${page}`);
+      const response = await fetch(`https://urmila-backend.onrender.com/admin/offerings?page=${page}`);
       const data = await response.json();
       setOfferings(data.offerings);
       setTotalPages(data.totalPages);
