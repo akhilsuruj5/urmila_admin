@@ -16,7 +16,7 @@ const [isPopupOpen, setIsPopupOpen] = useState(false);
 
 const fetchUserProfile = async (userId) => {
   try {
-    const response = await fetch(`https://urmila-backend.onrender.com/admin/usersProfile/${userId}`);
+    const response = await fetch(`https://urmila-webservice.onrender.com/admin/usersProfile/${userId}`);
     const data = await response.json();
     setSelectedUser(data);
     setIsPopupOpen(true);
@@ -30,7 +30,7 @@ const fetchUserProfile = async (userId) => {
     setLoading(true);
     try {
       const response = await fetch(
-        `https://urmila-backend.onrender.com/admin/registrations?page=${page}&status=${status}&offeringType=${offeringType}&userOccupation=${userOccupation}`
+        `https://urmila-webservice.onrender.com/admin/registrations?page=${page}&status=${status}&offeringType=${offeringType}&userOccupation=${userOccupation}`
       );
       const data = await response.json();
       setRegistrations(data.registrations);
@@ -49,7 +49,7 @@ const fetchUserProfile = async (userId) => {
 
   const handleStatusChange = async (id, newStatus) => {
     try {
-      await fetch(`https://urmila-backend.onrender.com/admin/registrations/${id}/status`, {
+      await fetch(`https://urmila-webservice.onrender.com/admin/registrations/${id}/status`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: newStatus }),

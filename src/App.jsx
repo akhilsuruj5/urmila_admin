@@ -13,6 +13,8 @@ import OfferingsPage from "./pages/OfferingsPage";
 import TestimonialsPage from "./pages/TestimonialsPage";
 import { AuthProvider } from "./context/AuthContext";
 import TeamPage from "./pages/TeamPage";
+import JobApplicationsPage from './pages/JobApplicationsPage';
+import RecruiterPage from './pages/RecruiterPage';
 
 const App = () => {
   return (
@@ -30,6 +32,8 @@ const App = () => {
         <Route path="/offerings" element={<ProtectedRoute><OfferingsPage /></ProtectedRoute>} />
         <Route path="/testimonials" element={<ProtectedRoute><TestimonialsPage /></ProtectedRoute>} />
         <Route path="/team" element={<ProtectedRoute><TeamPage /></ProtectedRoute>} />
+        <Route path="/recruiters" element={<ProtectedRoute><RecruiterPage /></ProtectedRoute>} />
+        <Route path="/applications" element={<ProtectedRoute><JobApplicationsPage /></ProtectedRoute>} />
 
         <Route
           path="/dashboard"

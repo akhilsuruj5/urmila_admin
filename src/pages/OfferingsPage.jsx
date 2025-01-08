@@ -24,7 +24,7 @@ const OfferingsPage = () => {
   const fetchOfferings = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`https://urmila-backend.onrender.com/admin/offerings?page=${page}`);
+      const response = await fetch(`https://urmila-webservice.onrender.com/admin/offerings?page=${page}`);
       const data = await response.json();
       setOfferings(data.offerings);
       setTotalPages(data.totalPages);
@@ -57,8 +57,8 @@ const OfferingsPage = () => {
     }
 
     const url = isEditing
-      ? `https://urmila-backend.onrender.com/admin/offerings/${editingId}`
-      : 'https://urmila-backend.onrender.com/admin/offerings';
+      ? `https://urmila-webservice.onrender.com/admin/offerings/${editingId}`
+      : 'https://urmila-webservice.onrender.com/admin/offerings';
     const method = isEditing ? 'PUT' : 'POST';
 
     try {
@@ -91,7 +91,7 @@ const OfferingsPage = () => {
     if (!confirmDelete) return;
 
     try {
-      await fetch(`https://urmila-backend.onrender.com/admin/offerings/${id}`, { method: 'DELETE' });
+      await fetch(`https://urmila-webservice.onrender.com/admin/offerings/${id}`, { method: 'DELETE' });
       fetchOfferings();
     } catch (error) {
       console.error('Error deleting offering:', error);

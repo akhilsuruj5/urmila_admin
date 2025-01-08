@@ -17,7 +17,7 @@ const TeamPage = () => {
   // Fetching team data from API
   const fetchTeamData = async () => {
     try {
-      const response = await fetch('https://urmila-backend.onrender.com/team');
+      const response = await fetch('https://urmila-webservice.onrender.com/team');
       if (!response.ok) {
         throw new Error('Failed to fetch team data');
       }
@@ -68,7 +68,7 @@ const TeamPage = () => {
   const handleAddMember = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://urmila-backend.onrender.com/team', {
+      const response = await fetch('https://urmila-webservice.onrender.com/team', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newMember),
@@ -93,7 +93,7 @@ const TeamPage = () => {
   // Handle Edit Team Member
   const handleEditMember = async (id, updatedData) => {
     try {
-      const response = await fetch(`https://urmila-backend.onrender.com/team/${id}`, {
+      const response = await fetch(`https://urmila-webservice.onrender.com/team/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedData),
@@ -122,7 +122,7 @@ const TeamPage = () => {
 
     if (window.confirm('Are you sure you want to delete this member?')) {
       try {
-        const response = await fetch(`https://urmila-backend.onrender.com/team/${id}`, {
+        const response = await fetch(`https://urmila-webservice.onrender.com/team/${id}`, {
           method: 'DELETE',
         });
         if (!response.ok) {

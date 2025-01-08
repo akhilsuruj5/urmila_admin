@@ -26,7 +26,7 @@ const Signup = () => {
     setLoading(true);
     try {
       const res = await axios.post(
-        "https://urmila-backend.onrender.com/admin/signup",
+        "https://urmila-webservice.onrender.com/admin/signup",
         {
           name,
           email,
